@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('qr-code-g', function () {
+    \QrCode::size(500)->format('png')->generate('faisalahmmed.com', public_path('images/qrcode.png'));
+    return view('qrCode');
+});
