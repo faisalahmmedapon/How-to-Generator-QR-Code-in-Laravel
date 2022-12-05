@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,6 @@ Route::get('/', function () {
 
 
 Route::get('qr-code-g', function () {
-    \QrCode::size(500)->format('png')->generate('faisalahmmed.com', public_path('images/qrcode.png'));
+    QrCode::size(500)->format('png')->generate('faisalahmmed.com', public_path('images/qrcode.png'));
     return view('qrCode');
 });
